@@ -32,6 +32,11 @@
 	z-index: 10000;
 }
 
+#float {
+	position: relative;
+	z-index: 10000;
+}
+
 #pac-input:focus {
 	border-color: #4d90fe;
 }
@@ -52,3 +57,6 @@
 	font-weight: 300;
 }
 
+.collapsing {
+    transition: height 0.6s;
+}

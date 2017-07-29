@@ -31,3 +31,4 @@ function initMap() {
 window.onresize = function() {
 	moveToCurLoc();
 }
+$('.collapse').collapse()
