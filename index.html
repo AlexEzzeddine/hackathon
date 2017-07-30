@@ -15,6 +15,7 @@
 	<body>
 		<div class="container">
 			<br/>
+			<a href="#memberModal" id="edit-modal-button" role="button" class="btn btn-large btn-primary" data-toggle="modal">Launch Demo Modal</a>
 			<div id="float" class="panel panel-default">
 			    <div class="panel-heading">
 			        <h1 class="panel-title text-center">
@@ -35,8 +36,33 @@
 			        </div>
 			    </div>
 			</div>
-		</div>		
+		</div>
+		<div id="float">
+			<div class="modal fade" id="memberModal" tabindex="-1" role="dialog" aria-labelledby="memberModalLabel" aria-hidden="true">
+			    <div class="modal-dialog">
+			        <div class="modal-content">
+			            <div class="modal-header">
+			                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+			                </button>
+			                 <h4 class="modal-title" id="memberModalLabel">Thank you for signing in!</h4>	
+			            </div>
+			            <div class="modal-body">
+			                <p>However the account provided is not known.
+			                    <BR>If you just got invited to the group, please wait for a day to have the database synchronized.</p>
+			                <p>You will now be shown the Demo site.</p>
+			            </div>
+			            <div class="modal-footer">
+			                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+		</div>	
 		<div id="map"></div>
+	<script type="text/javascript">
+		$('#memberModal').modal('show');
+		$('#edit-modal-button').hide();
+	</script>
 	<script src="js/initMap.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB831DxeIaoOGYK56xVufMQM0zZUUkU6tw&callback=initMap"></script>	
 	<script src="js/map.js"></script>

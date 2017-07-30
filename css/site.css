@@ -121,3 +121,13 @@
 	background: #009fff;
 	box-shadow: 2px 2px 2px #888888;
 }
+
+.modal-dialog {
+  width: 98%;
+  height: 92%;
+  padding: 0;
+}
+
+.modal-content {
+  height: 99%;
+}
