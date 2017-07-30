@@ -49,9 +49,10 @@ function initMap() {
 	moveToCurLoc();
 	client.collection('food_requests')
 	.subscribe((requests, changes) => {
-		changes.all.forEach(request => {
+		requests.forEach(request => {
 			image = new Image();
 			image.width = "32";
+			$(image).addClass("img-circle")
 			image.src = request.body.image
 			var myMarker = new CustomMarker(request.body.pos, map, image);
 		})
