@@ -82,8 +82,10 @@ $(function(){
 			$(div).text(request.body.name);
 			$(div).addClass('circle_caption');
 			var image = new Image();
-			console.log(image)
-			image.src = request.body.image
+			if (request.body.image!=="")
+				image.src = request.body.image
+			else
+				image.src = "./profile_default.png"
 			$(image).addClass("img-circle marker-image");
 			$(el).append(image);
 			$(el).append(div);
