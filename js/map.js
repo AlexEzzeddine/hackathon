@@ -1,5 +1,5 @@
 var map;
-var request_markers = [];
+var food_requests = [];
 
 client = Rapid.createClient("NDA1OWE0MWo1b3AzYzA3LnJhcGlkLmlv")
 
@@ -71,6 +71,11 @@ window.onresize = function() {
 	moveToCurLoc();
 }
 
+function showChat(id){
+	var request = food_requests[id]
+	$("#question").text(request.name+" is ordering " +request.food+" in "+request.time+". Do you want to join?");
+	$('#memberModal').modal('show');
+}
 
 $(function(){
 	client.collection('food_requests')
@@ -89,6 +94,11 @@ $(function(){
 			$(image).addClass("img-circle marker-image");
 			$(el).append(image);
 			$(el).append(div);
+			$(el).data("id", request.id);
+			$(el).click(function(event) {
+				showChat($(el).data("id"));
+			});
+			food_requests[request.id] = request.body;
 			var myMarker = new CustomMarker(request.body.pos, map, el);
 		})
   	})
