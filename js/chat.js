@@ -1,5 +1,3 @@
-const client = Rapid.createClient('cmVhNi5yYXBpZC5pbw==')
-
 client
   .collection('messages')
   .subscribe((messages, changes) => {
