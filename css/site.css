@@ -133,24 +133,34 @@
   width: 95%;
 }
 
-#chatbox {
-  flex: 1;
-  overflow: scroll;
-}
-#chatbox div {
-  padding: 15px 30px;
-  border-bottom: 1px solid #EEEBF3
-}
-input {
+#input {
   border: 1px solid #EEEBF3;
   border-left: none;
   padding: 25px 30px;
-  font-size: 1rem;
+  font-size: 15px;
   width: 100%;
   display: block;
   outline: none;
   transition: border .2s ease;
 }
-input:focus {
+#input:focus {
   border-color: #c4c3c9;
+}
+
+#chatbox {
+	height:200px;
+	overflow-y:scroll;
+  /*flex: 1;
+  overflow: scroll;*/
+}
+#chatbox div {
+  padding: 15px 30px;
+  border-bottom: 1px solid #EEEBF3
+}
+
+.main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }

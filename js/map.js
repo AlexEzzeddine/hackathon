@@ -1,5 +1,6 @@
 var map;
 var food_requests = [];
+var user;
 
 client = Rapid.createClient("NDA1OWE0MWo1b3AzYzA3LnJhcGlkLmlv")
 
@@ -72,12 +73,49 @@ window.onresize = function() {
 }
 
 function showChat(id){
+	var chat = client.collection("chat"+id)
+	chat
+  	.subscribe((messages, changes) => {
+    changes.added.forEach(message => {
+		var el = document.createElement("div");
+		console.log(el);
+		var img = new Image();
+		if (message.body.icon!=="")
+				img.src = message.body.icon
+			else
+				img.src = "./profile_default.png"
+		img.width=32;
+		$(img).css("margin-right", "10px");
+		$(el).prepend(img);
+		$(el).append("<span>"+message.body.text+"</span>")
+      	$('#chatbox').append(el);
+    })
+  	})
+
+  	$('#input').keyup(e => {
+  if (e.which === 13) {
+    chat
+      .newDocument()
+      .mutate({
+      	username:user.body.name,
+      	icon: user.body.image,
+      	text: $('#input').val() 
+      })
+    $('#input').val('')
+  }
+})
+
 	var request = food_requests[id]
 	$("#question").text(request.name+" is ordering " +request.food+" in "+request.time+". Do you want to join?");
 	$('#memberModal').modal('show');
 }
 
 $(function(){
+	client
+		.collection("users")
+		.document(getCookie("username"))
+		.fetch(doc =>{user = doc});
+
 	client.collection('food_requests')
 	.subscribe((requests, changes) => {
 		requests.forEach(request => {
