@@ -94,6 +94,10 @@
 }
 
 .marker {
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 	border: none;
     position: absolute;
     padding: 0px;
