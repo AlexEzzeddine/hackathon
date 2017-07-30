@@ -26,7 +26,7 @@ function proceed(){
 	})
 	.then(() => {
 		document.cookie = "username=" + doc.id;
-		document.location = "../index.html"
+		document.location = "./index.html"
 		})
 }
 
