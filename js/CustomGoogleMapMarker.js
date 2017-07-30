@@ -1,5 +1,5 @@
  function CustomMarker(pos,  map, image) {
-    this.latlng_ = google.maps.LatLng(pos.lat, pos.lng);
+    this.latlng_ = new google.maps.LatLng(pos.lat, pos.lng);
     this.image = image
     this.setMap(map);
   }
