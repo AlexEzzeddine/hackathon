@@ -133,7 +133,7 @@ $(function(){
 			$(el).append(div);
 			$(el).data("id", request.id);
 			$(el).click(function(event) {
-				showChat($(el).data("id"));
+				showChat($(event.target).parent().data("id"));
 			});
 			food_requests[request.id] = request.body;
 			var myMarker = new CustomMarker(request.body.pos, map, el);
