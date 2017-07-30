@@ -26,23 +26,3 @@ function initMap() {
 	});
 	moveToCurLoc();
 }
-
-const client = Rapid.createClient('NDA1OWE0MWo1b3AzYzA3LnJhcGlkLmlv')
-
-client
-  .collection('messages')
-  .subscribe((messages, changes) => {
-    changes.added.forEach(message => {
-      $('#chatbox').append($('<div>').text(message.body.text))
-    })
-  })
-
-$('#input').keyup(e => {
-  if (e.which === 13) {
-    client
-      .collection('messages')
-      .newDocument()
-      .mutate({ text: $('#input').val() })
-    $('#input').val('')
-  }
-})
