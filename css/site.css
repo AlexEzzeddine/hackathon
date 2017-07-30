@@ -150,8 +150,6 @@
 #chatbox {
 	height:200px;
 	overflow-y:scroll;
-  /*flex: 1;
-  overflow: scroll;*/
 }
 #chatbox div {
   padding: 15px 30px;

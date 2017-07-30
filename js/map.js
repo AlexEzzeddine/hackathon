@@ -78,7 +78,6 @@ function showChat(id){
   	.subscribe((messages, changes) => {
     changes.added.forEach(message => {
 		var el = document.createElement("div");
-		console.log(el);
 		var img = new Image();
 		if (message.body.icon!=="")
 				img.src = message.body.icon
