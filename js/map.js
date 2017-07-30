@@ -49,7 +49,7 @@ function initMap() {
 	moveToCurLoc();
 	client.collection('food_requests')
 	.subscribe((requests, changes) => {
-		changes.added.forEach(request => {
+		changes.all.forEach(request => {
 			image = new Image();
 			image.width = "32";
 			image.src = request.body.image
