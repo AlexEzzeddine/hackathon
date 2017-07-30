@@ -10,6 +10,7 @@
 	<script src="https://unpkg.com/rapid-io/dist/rapid.umd.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/bootstrap.collapser.js"></script>
+	<script src="https://unpkg.com/rapid-io/dist/rapid.umd.js"></script>
 	<script type="text/javascript">
  function open_chatbox()
  {
@@ -113,9 +114,10 @@
 							<h3 id="question"></h3>
 						</div>
 						<div id="chat" onClick="open_chatbox();"> Chat Now </div>
- <div id="chatBox"><div onclick="closeChat()" id="close">X</div> <br><br>Add   
- your     
- chat form here....</div>
+ <div id="chatBox"><div onclick="closeChat()" id="close">X</div> <br><br><div id="chatbox"></div>
+    <div>
+      <input id="input" placeholder="Type message..." />
+    </div></div>
 					</div>
 			        </div>
 			    </div>
