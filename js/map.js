@@ -20,8 +20,7 @@ client = Rapid.createClient("NDA1OWE0MWo1b3AzYzA3LnJhcGlkLmlv")
       div.style.paddingLeft = "0px";
       div.style.cursor = 'pointer';
       //you could/should do most of the above via styling the class added below
-		$(div).append(image);
-
+		$(div).append(this.image);
       google.maps.event.addDomListener(div, "click", function(event) {
         google.maps.event.trigger(me, "click");
       });
@@ -85,10 +84,11 @@ $(function(){
 	client.collection('food_requests')
 	.subscribe((requests, changes) => {
 		requests.forEach(request => {
-			image = new Image();
+			var image = new Image();
+			console.log(image)
 			image.width = "32";
-			$(image).addClass("img-circle")
 			image.src = request.body.image
+			$(image).addClass("img-circle")
 			var myMarker = new CustomMarker(request.body.pos, map, image);
 		})
   	})
