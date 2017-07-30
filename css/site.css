@@ -92,3 +92,28 @@
     margin: 0 auto;
     pointer-events: all;
 }
+
+.marker {
+	border: none;
+    position: absolute;
+    padding: 0px;
+    cursor: pointer;
+}
+
+.marker-image {
+	width: 32px;
+	box-shadow: 2px 2px 2px #888888;
+}
+
+.circle_caption {
+	position: relative;
+	top :0px;
+	display:block;
+	padding:3px;
+	border-radius: 5px;
+	font-size: 15px;
+	color: #000;
+	margin:auto;
+	background: #009fff;
+	box-shadow: 2px 2px 2px #888888;
+}
