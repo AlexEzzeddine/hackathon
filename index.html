@@ -2,71 +2,43 @@
 <html>
 	<head>
 	<title>FoodUP</title>
-	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="css/site.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="https://unpkg.com/rapid-io/dist/rapid.umd.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/bootstrap.collapser.js"></script>
-	<script src="js/map.js"></script>
-	<script async defer	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB831DxeIaoOGYK56xVufMQM0zZUUkU6tw&callback=initMap"></script>
+	<script async defer src="js/map.js"></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB831DxeIaoOGYK56xVufMQM0zZUUkU6tw&callback=initMap"></script>
+	<script async defer src="js/CustomGoogleMapMarker.js"></script>
 	
 	</head>
+
+	<body>
 		<div class="container">
 			<br/>
-			<div id="float" class="panel panel-default" style="width: 80%";>
+			<div id="float" class="panel panel-default">
 			    <div class="panel-heading">
 			        <h1 class="panel-title text-center">
-			            <a data-toggle="collapse" data-parent="#accordion" href="#filterPanel"><h2>What would you like to eat?</h2></a>
-			            <span class="pull-right panel-collapse-clickable" data-toggle="collapse" data-parent="#accordion" href="#filterPanel">
-			            </span>
+			            <a data-toggle="collapse" href="#request-form"><h2>Make a request?</h2></a>
 			        </h1>
 			    </div>
-			    <div id="filterPanel" class="panel-collapse panel-collapse collapse">
+			    <div id="request-form" class="panel-collapse panel-collapse collapse">
 			        <div class="panel-body">
-			            <input type="text" class="form-control" placeholder="Current Location">
+			            <input id="request-name" type="text" class="form-control" placeholder="Name">
 						<br/>
-						<input type="text" class="form-control" placeholder="Select Food">
+						<input id="request-food" type="text" class="form-control" placeholder="Select Food">
 						<br/>
-						<input type="text" class="form-control" placeholder="Time to order">
+						<input id="request-time" type="text" class="form-control" placeholder="Time to order">
 						<br/>
-						<div class="col-md-4 text-center"> 
-							<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Deliver Options</button>
+						<div class="text-center"> 
+							<button id="request-submit" type="button" class="btn btn-primary btn-lg" data-toggle="modal">Submit request</button>
 						</div>
 			        </div>
 			    </div>
 			</div>
-			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    			<div class="vertical-alignment-helper">
-    			    <div class="modal-dialog vertical-align-center">
-    			        <div class="modal-content">
-    			            <div class="modal-header">
-    			                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
-							
-    			                </button>
-    			                 <h4 class="modal-title" id="myModalLabel">Delivery Options</h4>
-								 
-    			            </div>
-    			            <div class="modal-body">
-								<input type="text" class="form-control" placeholder="Current Location">
-								<br/>
-								<input type="text" class="form-control" placeholder="Select Food">
-								<br/>
-								<input type="text" class="form-control" placeholder="Time to order">
-								<br/>
-							</div>
-    			            <div class="modal-footer">
-    			                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-    			                <button type="button" class="btn btn-primary">Save changes</button>
-    			            </div>
-    			        </div>
-    			    </div>
-    			</div>
-			</div>
 		</div>		
-		<div id="map">
-		</div>
-		
-			
+		<div id="map"></div>		
 	</body>
 </html>
