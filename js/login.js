@@ -1,4 +1,4 @@
-client = Rapid.createClient("ZW05d2k4ajh1b2FzbWIuYXBwLXJhcGlkLmlv")
+client = Rapid.createClient("ZW05d2k4ajh1cGMxdDQuYXBwLXJhcGlkLmlv")
 var b64 = "";
 
 function previewImage(input){
