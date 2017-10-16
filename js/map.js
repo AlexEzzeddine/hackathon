@@ -2,7 +2,7 @@ var map;
 var food_requests = [];
 var user;
 
-client = Rapid.createClient("NDA1OWE0MWo1b3AzYzA3LnJhcGlkLmlv")
+client = Rapid.createClient("ZW05d2k4ajh1cGMxdDQuYXBwLXJhcGlkLmlv")
 
  function CustomMarker(pos,  map, el) {
     this.latlng_ = new google.maps.LatLng(pos.lat, pos.lng);
